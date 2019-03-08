@@ -3,7 +3,7 @@ from unittest.mock import patch
 from datetime import datetime
 from subprocess import CompletedProcess
 
-from ccache_stats import CCacheStats, _BlockingExecutor
+from .ccache_stats import CCacheStats, _BlockingExecutor
 
 CCACHE_EXECUTABLE = r"ccache"
 CCACHE_VERSION = (1,3,3)

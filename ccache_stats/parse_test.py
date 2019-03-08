@@ -1,7 +1,7 @@
 import unittest as ut
 from datetime import datetime
 
-from parse import parse_stat, parse_version
+from .parse import parse_stat, parse_version
 
 class VersionParse(ut.TestCase):
     """Test parsing the version from ccache output.

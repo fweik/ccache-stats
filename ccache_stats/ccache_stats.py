@@ -2,7 +2,7 @@
 """
 
 import subprocess
-from parse import parse_stat, parse_version
+from .parse import parse_stat, parse_version
 
 class _BlockingExecutor:
     def __call__(self, executable, args):
@@ -14,7 +14,7 @@ class _BlockingExecutor:
         return str(res.stdout)
 
 class CCacheStats:
-    def __init__(self, ccache_exec, executor = _BlockingExecutor()):
+    def __init__(self, ccache_exec = r"ccache", executor = _BlockingExecutor()):
         self._ccache = ccache_exec
         self._exec = executor
 
@@ -30,4 +30,3 @@ class CCacheStats:
         """
 
         return parse_stat(self._exec(self._ccache, ["-s"]))
-
